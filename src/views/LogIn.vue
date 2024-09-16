@@ -20,7 +20,7 @@ const errorMessage = ref("");
 
 // Login with Google
 const loginWithGoogle = async () => {
-    router.push('/home')
+    window.open('http://localhost:3000/auth/google', '_self')    
     // code
 };
 
