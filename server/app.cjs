@@ -1,23 +1,29 @@
 const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
+const cors = require('cors');
 
-const loginRoutes = require("./routes/login.cjs");
+require("./config/discordConf.cjs");
 
+const routes = require("./routes/login.cjs");
 const app = express();
 
+
+// Cors middleware
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 app.use(express.json());
+
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: false },
+        // cookie: { secure: false },
     }),
 );
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/auth", loginRoutes);
+app.use("/auth", routes);
 
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));

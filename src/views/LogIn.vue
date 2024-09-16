@@ -2,7 +2,7 @@
     <div class="login-container">
         <h2>Login</h2>
         <div class="buttons">
-            <button @click="loginWithGoogle">Login with Google</button>
+            <!-- <button @click="loginWithGoogle">Login with Google</button> -->
             <button @click="loginWithFacebook">Login with Facebook</button>
             <button @click="loginWithDiscord">Login with Discord</button>
         </div>
@@ -19,10 +19,10 @@ const router = useRouter();
 const errorMessage = ref("");
 
 // Login with Google
-const loginWithGoogle = async () => {
-    window.open('http://localhost:3000/auth/google', '_self')    
-    // code
-};
+// const loginWithGoogle = async () => {
+//     window.open('http://localhost:3000/auth/google', '_self')
+//     // code
+// };
 
 // Login with Facebook
 const loginWithFacebook = async () => {

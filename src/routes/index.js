@@ -4,8 +4,8 @@ import Home from "../views/Home.vue";
 import LogIn from "../views/LogIn.vue";
 
 const routes = [
-    { path: "/", component: LogIn },
-    { path: "/home", component: Home },
+    { path: "/", name: 'Login', component: LogIn },
+    { path: "/home", name: 'Home', component: Home },
 ];
 
 const router = createRouter({
