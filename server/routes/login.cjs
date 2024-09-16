@@ -10,7 +10,15 @@ router.get('/google/callback', passport.authenticate('google', {
     failureRedirect: '/'
 }), (req, res) => {
     res.cookie('data', JSON.stringify(req.user._json))
-    res.redirect('http://localhost:5173/home')
+    res.redirect('http://localhost:5173/#/home')
+})
+
+router.get('/facebook', passport.authenticate('facebook', {scope: 'email'}))
+router.get('/facebook/callback', passport.authenticate('facebook', {
+    failureRedirect: '/'
+}), (req, res) => {
+    res.cookie('faceData', JSON.stringify(req.user._json))
+    res.redirect('http://localhost:5173/#/home')
 })
 
 module.exports = router

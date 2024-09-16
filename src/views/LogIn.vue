@@ -20,13 +20,13 @@ const errorMessage = ref("");
 
 // Login with Google
 const loginWithGoogle = async () => {
-    window.open('http://localhost:3000/auth/google', '_self')    
+    window.open('http://localhost:3000/auth/google', '_self')
     // code
 };
 
 // Login with Facebook
 const loginWithFacebook = async () => {
-    router.push('/home')
+    await window.open('http://localhost:3000/auth/facebook', '_self')
     // code
 };
 
